@@ -9,3 +9,16 @@
 :x:{{0.5}imp}\xylophone;
 :sickdropbro:{{1}saw,:rip:,:x:,:pat:,{4}saw,:machine:,:heartsound:,:beesound:,:kickdrum:,:someboom:,:someothersample:}mix;
 {:sickdropbro:}dac;
+
+//another variation
+:kickdrum:{{4}imp}\909b;
+:beesound:{{2}imp}\bee;
+:someboom:{{1}imp}\firecrack;
+:someothersample:{{1}sin}\bellrip;
+:heartssound:{{4}imp}\heart;
+:machine:{{2}imp}\machine;
+:pat:{{1}imp}\pattern10;
+:pat2:{{2}imp}\pattern11;
+:xylo:{{0.5}imp}\xylophone;
+:sickdropbro:{{1}saw,:rip:,:xylo:,:pat:,{4}saw,:machine:,:heartsound:,:beesound:,:kickdrum:,:someboom:,:someothersample:}mix;
+{:sickdropbro:}dac;
