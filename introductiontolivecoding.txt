@@ -38,4 +38,12 @@
 :
 >{:kickdrum:,:beesound:}mix;//mixing both the controlled samples
 >{0}saw; 
- 
+
+''''''''
+cd into the sema folder and run yarn install and yarn dev
+
+@Hamza you cannot on the web based version.  If you download and run it locally you can find the Samples directory within the Assets directory
+
+https://github.com/mimic-sussex/sema/blob/master/docs/default-livecoding-language.md
+
+''''''''
