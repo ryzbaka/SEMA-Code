@@ -1,0 +1,41 @@
+//BASIC
+>{2}saw;// saw is the oscillator function and 2 is the frequency so 2 saw oscillations per second
+>{1}saw;
+>{{80}saw,{81}saw}mix;
+
+
+//INPUT and OUTPUT
+{20}saw;
+// the > denotes audio output
+>{{100}sqr,{300}sqr}mul;//we're just outputting the 100 freq saw
+>{0}saw; //dac is analog to digital converter
+{{2}saw}dac; // so this is another way of getting output from sema
+{{0}saw}dac; // and now we're sending 0 freq saw to the dac as output
+//to take input we use the adc which is analog to digital converter
+>{{1}adc,{50}sin}mul;
+
+//VARIABLES
+:osc1:{100}sin; //variable name is osc1 put between : and :
+:osc2:{200}sin; // this sin wave is an octave above the precvious sin wave
+{:osc1:,:osc2:}mix;
+
+:all:{:osc1:{100}sin,:osc2:{200}sin}mul;
+ //entire statement stored in :all: rest individual oscillators stored in :osc1: and :osc2:
+{:all:}dac; //now we have the statement coming in to our output
+{:osc1:}dac;// now we just have one oscillator in out audio output
+ >{0}mix;
+ //SAMPLING
+ //list of all samples in sema - https://github.com/mimic-sussex/sema/tree/master/assets/samples
+ //trigger is an event that occurs when a signal crosses from below 0 to above 0
+ //these triggers can be used to play samples
+ >{1}imp;// impulse is a signal that crosses over it can be used as a control signal to trigger samples
+ >{{2}imp}\909b; //we're triggering the 909 kick drum sample using the impulse signal
+ 
+:kickdrum:{{4}imp}\909b; //storing the controlled sample into a variable
+{:kickdrum:}dac;
+:beesound:{{2}imp}\bee;
+{:beesound:}dac;
+:
+>{:kickdrum:,:beesound:}mix;//mixing both the controlled samples
+>{0}saw; 
+ 
